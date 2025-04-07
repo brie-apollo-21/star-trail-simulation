@@ -112,10 +112,10 @@
                         getPlaceDetails(results[1].place_id)
 
                     } else {
-                        window.alert('No results found');
+                        // window.alert('No results found');
                     }
                 } else {
-                    window.alert('Geocoder failed due to: ' + status);
+                    // window.alert('Geocoder failed due to: ' + status);
                 }
             });
             // const service = new PlacesService(map);
