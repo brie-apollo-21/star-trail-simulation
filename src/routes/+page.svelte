@@ -264,7 +264,7 @@
         const outlinePass = new OutlinePass(new THREE.Vector2(256, 256), scene, camera, [north, south, east, west])
         composer.addPass(outlinePass)
 
-        const bloomPass = new UnrealBloomPass(new THREE.Vector2(renderer.domElement.clientWidth, renderer.domElement.clientHeight), 0.25, 0.25, 2)
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(renderer.domElement.clientWidth, renderer.domElement.clientHeight), 0.1, 0.15, 1)
         composer.addPass(bloomPass)
 
         const smaaPass = new SMAAPass();
