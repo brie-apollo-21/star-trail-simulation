@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import 'tailwindcss';
+
+.pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pt-serif-bold {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pt-serif-regular-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.pt-serif-bold-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.range {
+    -webkit-appearance: none;
+    /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    /* Full-width */
+    height: 15px;
+    /* Specified height */
+    background: #999999;
+    /* Grey background */
+    outline: none;
+    border-radius: 9999px;
+    border-width: 1px;
+    border-color: #ffffff;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 15px;
+    /* Set a specific slider handle width */
+    height: 15px;
+    /* Slider handle height */
+    background: #ffffff;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    opacity: 0.7;
+    transition: opacity .1s;
+    -webkit-transition: .1s;
+    border-radius: 9999px;
+}
+
+.range::-webkit-slider-thumb:hover {
+    opacity: 1;
+}
+
+.range::-moz-range-thumb {
+    width: 15px;
+    /* Set a specific slider handle width */
+    height: 15px;
+    /* Slider handle height */
+    background: #ffffff;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    opacity: 0.7;
+    transition: opacity .1s;
+    -webkit-transition: .1s;
+    border-radius: 9999px;
+}
+
+.range::-moz-range-thumb:hover {
+    opacity: 1;
+}
