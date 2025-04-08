@@ -429,16 +429,16 @@
     })
 </script>
 
-<div class="flex flex-col py-4 px-8 w-screen h-screen bg-black">
-    <h1 class="text-white pt-serif-regular text-4xl">Star Trail Simulation</h1>
+<div class="flex flex-col py-8 lg:py-4 px-8 w-screen h-screen bg-black">
+    <h1 class="text-white pt-serif-regular text-2xl lg:text-4xl">Star Trail Simulation</h1>
     <hr class="text-white my-4">
-    <div class="flex flex-row h-full">
+    <div class="flex flex-col lg:flex-row h-full">
         <div id="canvas-container" class="w-full h-full flex justify-center items-center">
             <canvas id="canvas" class="w-full h-full scale-0 rounded-xl border duration-500"></canvas>
             <h1 id="loading" class="text-white pt-serif-regular text-4xl duration-200 absolute">Loading</h1>
         </div>
-        <div class="border border-white h-full mx-4"></div>
-        <div class="flex flex-col w-1/4 gap-6">
+        <div class="border border-white w-full lg:h-full lg:w-0 my-4 lg:mx-4 lg:my-0"></div>
+        <div class="flex flex-col w-full lg:w-1/4 gap-6">
             <div>
                 <label class="text-white pt-serif-regular text-nowrap mb-1" for="exposure">Exposure Time ({(exposureDisplay/60).toFixed(1)} hours)</label>
                 <input id="exposure" type="range" max=1440 min=10 class="w-full range" bind:value={exposureDisplay}>
@@ -479,7 +479,7 @@
                 </div>
             </div>
 
-            <div id="map" class="w-full h-full rounded-xl border border-white"></div>
+            <div id="map" class="w-full aspect-2/1 lg:aspect-auto lg:h-full rounded-xl border border-white"></div>
 
             <button id="reload" class="border border-white rounded-full bg-black w-fit not-disabled:hover:cursor-pointer not-disabled:hover:invert-100 group active:cursor-default duration-200" disabled><p class="mx-4 my-2 pt-serif-regular text-white group-active:text-black group-disabled:text-white! group-disabled:opacity-50 duration-200">Reload</p></button>
         </div>
