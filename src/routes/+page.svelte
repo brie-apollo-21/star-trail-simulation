@@ -136,9 +136,8 @@
         });
     }
 
-    
-    onMount(() => {
-        initMap();
+    const startup = async () => {
+        await initMap();
 
         let output = getStarTrails(lat, lon, date.getJulian())
         let stars = output.stars
@@ -426,6 +425,10 @@
         document.getElementById("loading").classList.add("scale-0")
         document.getElementById("canvas").classList.remove("scale-0")
         document.getElementById("canvas").classList.add("border-white")
+    }
+    
+    onMount(() => {
+        startup()
     })
 </script>
 
