@@ -56,6 +56,8 @@
             method: "POST"
         })
         const position = (await geolocate.json()).location
+        lat = position.lat
+        lon = position.lng
 
         await loader.load()
         // Request needed libraries.
@@ -65,7 +67,7 @@
         const { Place } =  await google.maps.importLibrary("places");
         const geocoder = new google.maps.Geocoder;
         const map = new Map(document.getElementById("map"), {
-            center: { lat: lat, lng: lon },
+            center: position,
             zoom: 7,
             mapId: "3d30e228f851881a",
             disableDefaultUI: true,
@@ -74,7 +76,7 @@
         
         const draggableMarker = new AdvancedMarkerElement({
             map,
-            position: { lat: lat, lng: lon },
+            position: position,
             gmpDraggable: true,
             title: "This marker is draggable.",
         });
@@ -97,8 +99,6 @@
 
         draggableMarker.addListener("dragend", (event) => {
             const position = draggableMarker.position;
-            lat = position.lat
-            lon = position.lng
 
             document.getElementById("reload").disabled = false
 
