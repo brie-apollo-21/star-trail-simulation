@@ -104,20 +104,20 @@
 
             document.getElementById("reload").disabled = false
 
-            geocoder.geocode({'location': position}, function(results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    if (results[1]) {
+            // geocoder.geocode({'location': position}, function(results, status) {
+            //     if (status === google.maps.GeocoderStatus.OK) {
+            //         if (results[1]) {
 
-                        console.log(results[1].place_id);
-                        getPlaceDetails(results[1].place_id)
+            //             console.log(results[1].place_id);
+            //             getPlaceDetails(results[1].place_id)
 
-                    } else {
-                        // window.alert('No results found');
-                    }
-                } else {
-                    // window.alert('Geocoder failed due to: ' + status);
-                }
-            });
+            //         } else {
+            //             // window.alert('No results found');
+            //         }
+            //     } else {
+            //         // window.alert('Geocoder failed due to: ' + status);
+            //     }
+            // });
             // const service = new PlacesService(map);
             // let request = {
             //     location: {'lat': position.lat, 'lon': position.lon},
