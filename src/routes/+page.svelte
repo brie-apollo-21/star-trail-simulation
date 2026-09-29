@@ -99,6 +99,8 @@
 
         draggableMarker.addListener("dragend", (event) => {
             const position = draggableMarker.position;
+            lat = position.lat
+            lon = position.lng
 
             document.getElementById("reload").disabled = false
 
