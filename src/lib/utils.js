@@ -209,6 +209,7 @@ export function getVisibleStars(lat, lon, jd_ut) {
 
 // 24 hours of star coordinates
 export function getStarTrails(lat, lon, jd_ut) {
+    console.log(lat, lon)
     const timestep = 1/24/60 // minutes
     let stars = []
     lat = normalizeRad(degToRad(lat))

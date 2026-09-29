@@ -56,8 +56,6 @@
             method: "POST"
         })
         const position = (await geolocate.json()).location
-        lat = position.lat
-        lon = position.lng
 
         await loader.load()
         // Request needed libraries.
@@ -134,12 +132,15 @@
             //     })
             // });
         });
+
+        return {lat: position.lat, lon: position.lng}
     }
 
-    const startup = async () => {
-        await initMap();
+    
+    onMount(async () => {
+        const position = await initMap();
 
-        let output = getStarTrails(lat, lon, date.getJulian())
+        let output = getStarTrails(position.lat, position.lon, date.getJulian())
         let stars = output.stars
         const maxBrightness = magToBrightness(output.minMag)
         const minBrightness = 2.25
@@ -383,10 +384,11 @@
         document.getElementById("reload").onclick = (e) => {
             recomputeStarTrails(lat, lon, date.getJulian(), exposure)
         }
-
-        $effect(() => {
+        loadStarTrails(exposure)
+        document.getElementById("exposure").oninput = (e) => {
+            exposure = Number(e.target.value)
             loadStarTrails(exposure)
-        })
+        }
 
         // camera.position.y = 1;
         // camera.position.z = 5;
@@ -425,10 +427,6 @@
         document.getElementById("loading").classList.add("scale-0")
         document.getElementById("canvas").classList.remove("scale-0")
         document.getElementById("canvas").classList.add("border-white")
-    }
-    
-    onMount(() => {
-        startup()
     })
 </script>
 
